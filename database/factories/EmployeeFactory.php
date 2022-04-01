@@ -21,6 +21,10 @@ class EmployeeFactory extends Factory
             'user_id' => User::factory(['role' => 'employee']),
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
+            'description' => $this->faker->paragraph,
+            'birth' => '1999-02-25',
+            'country' => "syria",
+            'city' => "aleppo",
         ];
     }
 }

@@ -21,6 +21,8 @@ class CompanyFactory extends Factory
             'user_id' => User::factory([ 'role' => 'company' ]),
             'name' => $this->faker->name(),
             'description' => $this->faker->paragraph(1),
+            'country' => 'syria',
+            'city' => 'aleppo',
         ];
     }
 }

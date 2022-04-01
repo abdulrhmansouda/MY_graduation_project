@@ -30,21 +30,15 @@ Route::get('/', function () {
     return view('welcoming.welcome');
 })->name('welcome');
 
-Route::get('/llogin', function () {
-    return view('welcoming.user-login');
-})->name('user-login');
+// Route::get('/llogin', function () {
+//     return view('welcoming.user-login');
+// })->name('user-login');
 
-Route::get('/rregister', function () {
+Route::get('/user-register', function () {
     return view('welcoming.user-register');
 })->name('user-register');
 
-Route::get('/company/register', function () {
-    return view('welcoming.company-register');
-})->name('company-register');
 
-Route::get('/employee/register', function () {
-    return view('welcoming.employee-register');
-})->name('employee-register');
 
 
 Route::group([

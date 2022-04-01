@@ -89,8 +89,8 @@
           <div>
             <h1>App landing page template</h1>
             <h2>Lorem ipsum dolor sit amet, tota senserit percipitur ius ut, usu et fastidii forensibus voluptatibus. His ei nihil feugait</h2>
-            <a href="{{ route('company-register') }}" class="download-btn">I'm an Emplyee</a>
-            <a href="{{ route('employee-register') }}" class="download-btn">We're a Company</a>
+            <a href="{{ route('employee-register') }}" class="download-btn">I'm an Emplyee</a>
+            <a href="{{ route('company-register') }}" class="download-btn">We're a Company</a>
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">

@@ -18,8 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('locating')->nullable();
-            $table->timestamp('founding_date')->nullable();
+            $table->timestamp('founding_date');
+            $table->string('country');
+            $table->string('city');
             $table->timestamps();
         });
     }

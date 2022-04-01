@@ -13,9 +13,11 @@ class Company extends Model
         'name',
         'description',
         'user_id',
-        'locating',
-        'found',
-        'founding_date',
+        'country',
+        'city',
+        // 'locating',
+        // 'found',
+        // 'founding_date',
     ];
 
     public function user(){
