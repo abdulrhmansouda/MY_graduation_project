@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+// require 'vendor/autoload.php';
+
 use App\Http\Requests\Post\StorePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
+
+
+
+
 
 class PostController extends Controller
 {
@@ -47,7 +54,18 @@ class PostController extends Controller
         $post = new Post;
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
             $image = $request->file('image');
+
+            // $manager = new (['driver' => 'imagick']);
+            // $img = Image::configure(['driver' => 'imageik']);
+            // run the operations on the image or read a file
+// for the particular operations from cache
+// $img = Image::cache(function($image) {
+//     return $image->make('public/foo.jpg')->resize(300, 200)->greyscale();
+//  });
+            // Image
+            // imagegd($image);
             $post->image = $image->store('posts', 'images');
         }
 
@@ -58,7 +76,7 @@ class PostController extends Controller
         $post->user_id = auth()->user()->id;
         $post->save();
 
-        session()->flash('success','Post created Successfully.');
+        session()->flash('success', 'Post created Successfully.');
 
         return redirect(route('home'));
     }

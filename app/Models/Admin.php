@@ -29,7 +29,7 @@ class Admin extends Model
     {
         $image = $this->user->image;
         if ($image) {
-            return asset('images/admins/' . $image);
+            return asset('images/' . $image);
         }
         return asset('images/default_user.png');
     }

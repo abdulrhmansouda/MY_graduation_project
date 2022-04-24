@@ -168,7 +168,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <input type="date" class="form-control" placeholder="FoundingDate" name="founding_date">
+                                    <input type="date" class="form-control" placeholder="FoundingDate" name="founding_date" value="{{ old('founding_date') }}">
                                 </div>
 
                                 <div class="form-group">
@@ -178,7 +178,7 @@
 
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Image</label>
-                                    <input class="form-control" type="file" name="image">
+                                    <input class="form-control" type="file" name="image" value="{{ old('image','') }}">
                                 </div>
 
 
@@ -193,7 +193,7 @@
 
                                 <div class="form-group">
                                     <label class="form-control-label">Country</label>
-                                    <select id="country" class="form-control" name="country"></select>
+                                    <select id="country" class="form-control" name="country" >{{ old('country') }}</select>
                                 </div>
 
                                 <div class="form-group">
@@ -211,7 +211,7 @@
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                                 </div>
-                                <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;"
+                                <p class="text-sm mt-3 mb-0">Already have an account? <a href="{{ route('login') }}"
                                         class="text-dark font-weight-bolder">Sign in</a></p>
                             </form>
                         </div>

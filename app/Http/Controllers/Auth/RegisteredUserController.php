@@ -76,7 +76,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('home'));
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function employee_store(Request $request)
@@ -98,7 +98,7 @@ class RegisteredUserController extends Controller
         $image = $request->get('imgae');
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
-            $image = $image->store('companies', 'images');
+            $image = $image->store('employees', 'images');
         }
 
         $user = User::create([
@@ -125,6 +125,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('home'));
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 }

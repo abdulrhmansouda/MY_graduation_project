@@ -32,7 +32,7 @@ class Employee extends Model
     {
         $image = $this->user->image;
         if ($image) {
-            return asset('images/employees/' . $image);
+            return asset('images/' . $image);
         }
         return asset('images/default_user.png');
     }

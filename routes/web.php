@@ -18,28 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', [TestController::class, 'index']);
-
-// Route::get('/sidebar', fn () => view('sidebar'));
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/tags',function(){
+    return view('tags');
+});
  
 Route::get('/', function () {
     return view('welcoming.welcome');
 })->name('welcome');
 
-// Route::get('/llogin', function () {
-//     return view('welcoming.user-login');
-// })->name('user-login');
 
 Route::get('/user-register', function () {
     return view('welcoming.user-register');
 })->name('user-register');
-
-
-
 
 Route::group([
     'middleware' => ['auth', 'isBlocked'],
@@ -57,16 +47,8 @@ Route::group([
     })->name('home');
 
 
-
-
-
-
     /////////////////post//////////////////
     Route::name('post.')->prefix('/posts')->group(function () {
-
-        // Route::get('/create', function () {
-        //     return view('post.create');
-        // })->name('create');
 
         Route::resource('/',PostController::class);
 
@@ -92,7 +74,10 @@ Route::group([
 
     /////////////////admin//////////////////
     Route::name('admin.')->prefix('/admin')->middleware(['isAdmin'])->group(function () {
+        Route::get('/admins', [AdminController::class, 'admins'])->name('admins');
         Route::get('/companies', [AdminController::class, 'companies'])->name('companies');
+        Route::get('/employees', [AdminController::class, 'employees'])->name('employees');
+
         Route::get('/companies/{company}', [AdminController::class, 'company_show'])->name('company');
         Route::put('/users/block/{user}', [AdminController::class, 'user_block'])->name('users.block');
         Route::get('/', function () {
@@ -121,8 +106,8 @@ Route::group([
     });
 });
 
-// Route::get('/', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

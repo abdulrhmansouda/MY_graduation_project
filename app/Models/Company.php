@@ -32,7 +32,7 @@ class Company extends Model
     public function getImageUrlAttribute(){
         $image = $this->user->image;
         if($image){
-            return asset('images/companies/'.$image);
+            return asset('images/'.$image);
         }
         return asset('images/default_user.png');
     }

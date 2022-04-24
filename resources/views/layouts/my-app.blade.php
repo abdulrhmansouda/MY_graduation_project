@@ -23,6 +23,8 @@
         <!-- CSS Files -->
         <link id="pagestyle" href="{{ asset('/assets/css/argon-dashboard.css?v=2.0.1') }}" rel="stylesheet" />
 
+        {{-- bootstrap --}}
+        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -144,7 +146,8 @@
         <script src="{{ asset('/assets/js/argon-dashboard.min.js?v=2.0.1') }}"></script>
         <!-- Font Awesome Icons -->
         <script src="{{ asset('/assets/js/font_icon_kit_fontawesome.js') }}"></script>
- 
+        {{-- bootstrap --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> --}}
 
 </body>
 
